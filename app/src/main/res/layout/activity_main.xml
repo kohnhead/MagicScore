@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ff000000"
+    android:weightSum="1" >
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/plus"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:textAlignment="center"
+        android:textColor="#ffffffff"
+        android:textSize="75dp"
+        android:layout_gravity="center"
+        android:onClick="clickPlus"
+        android:textStyle="italic" />
+
+    <EditText
+        android:layout_width="236dp"
+        android:layout_height="wrap_content"
+        android:text="20"
+        android:id="@+id/health"
+        android:textSize="195dp"
+        android:gravity="center"
+        android:textColor="#ffffffff"
+        android:editable="false"
+        android:enabled="true"
+        android:background="@android:color/transparent"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:textStyle="italic" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:id="@+id/minus"
+        android:textStyle="bold|italic"
+        android:textSize="80dp"
+        android:textColor="#ffffffff"
+        android:capitalize="none"
+        android:background="@android:color/transparent"
+        android:layout_gravity="center"
+        android:onClick="clickMinus" />
+
+</LinearLayout>
