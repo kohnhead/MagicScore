@@ -1,12 +1,27 @@
 package dk.magicscore;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import java.util.Queue;
 
 
 public class ColorActivity extends ActionBarActivity {
+
+    /** TODO
+     * check which color boxes have been checked
+     * only allow up to 2 colors to be selected (disabling the others)
+     * change background to color choice
+     * add button to navigate back to main activity
+     * @param savedInstanceState
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +50,27 @@ public class ColorActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onColorSelect(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        String background = new String();
+
+        CheckBox white = (CheckBox)findViewById(R.id.whiteBox);
+        CheckBox blue = (CheckBox)findViewById(R.id.blueBox);
+        CheckBox black = (CheckBox)findViewById(R.id.blackBox);
+        CheckBox red = (CheckBox)findViewById(R.id.redBox);
+        CheckBox green = (CheckBox)findViewById(R.id.greenBox);
+
+        CheckBox[] colors = {white, blue, black, red, green};
+
+        int i = 0;
+        while(i < 5){
+            CheckBox color = colors[i++];
+            if(color.isChecked())
+                background += color.getText() + " ";
+        }
+        TextView text = (TextView)findViewById(R.id.color);
+        text.setText(background);
     }
 }
