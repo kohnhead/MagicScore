@@ -23,6 +23,9 @@ public class ColorActivity extends ActionBarActivity {
      * @param savedInstanceState
      */
 
+    public final static String EXTRA_MESSAGE = "dk.magicscore.MESSAGE";
+    public final static String COLOR_MESSAGE = "dk.magicscore.COLOR";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +56,11 @@ public class ColorActivity extends ActionBarActivity {
     }
 
     public void onColorSelect(View view){
+        Intent score = getIntent();
         Intent intent = new Intent(this, MainActivity.class);
+
         String background = new String();
+        String extra = score.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
         CheckBox white = (CheckBox)findViewById(R.id.whiteBox);
         CheckBox blue = (CheckBox)findViewById(R.id.blueBox);
@@ -68,9 +74,14 @@ public class ColorActivity extends ActionBarActivity {
         while(i < 5){
             CheckBox color = colors[i++];
             if(color.isChecked())
-                background += color.getText() + " ";
+                background += color.getText();
         }
+
         TextView text = (TextView)findViewById(R.id.color);
         text.setText(background);
+        intent.putExtra(COLOR_MESSAGE, background);
+        intent.putExtra(EXTRA_MESSAGE, extra);
+
+        startActivity(intent);
     }
 }

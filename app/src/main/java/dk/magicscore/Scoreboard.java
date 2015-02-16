@@ -14,6 +14,7 @@ import android.widget.TextView;
 public class Scoreboard extends ActionBarActivity {
 
     public final static String EXTRA_MESSAGE = "dk.magicscore.MESSAGE";
+    public final static String COLOR_MESSAGE = "dk.magicscore.COLOR";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +54,13 @@ public class Scoreboard extends ActionBarActivity {
         super.onConfigurationChanged(newConfig);
 
         if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            Intent background = getIntent();
             Intent intent = new Intent(this, MainActivity.class);
             EditText edit = (EditText) findViewById(R.id.health);
             String message = edit.getText().toString();
+            String color = background.getStringExtra(MainActivity.COLOR_MESSAGE);
             intent.putExtra(EXTRA_MESSAGE, message);
+            intent.putExtra(COLOR_MESSAGE, color);
             startActivity(intent);
         }
 
