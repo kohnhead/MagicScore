@@ -92,24 +92,34 @@ public class MainActivity extends ActionBarActivity {
 
         if (color.equals("White"))
             id = R.drawable.white;
-        else if (color.equals("Blue"))
-            id = R.drawable.blue;
-        else if (color.equals("Black"))
-            id = R.drawable.black;
-        else if (color.equals("Red"))
-            id = R.drawable.red;
-        else if (color.equals("Green"))
-            id = R.drawable.green;
+        else if (color.equals("WhiteBlue"))
+            id = R.drawable.whiteblue;
         else if (color.equals("WhiteBlack"))
             id = R.drawable.whiteblack;
-        else if (color.equals("BlackGreen"))
-            id = R.drawable.blackgreen;
+        else if (color.equals("WhiteRed"))
+            id = R.drawable.whitered;
+        else if (color.equals("WhiteGreen"))
+            id = R.drawable.whitegreen;
+        else if (color.equals("Blue"))
+            id = R.drawable.blue;
         else if (color.equals("BlueBlack"))
             id = R.drawable.blueblack;
-        else if (color.equals("RedGreen"))
-            id = R.drawable.redgreen;
+        else if (color.equals("BlueRed"))
+            id = R.drawable.bluered;
         else if (color.equals("BlueGreen"))
             id = R.drawable.bluegreen;
+        else if (color.equals("Black"))
+            id = R.drawable.black;
+        else if (color.equals("BlackRed"))
+            id = R.drawable.blackred;
+        else if (color.equals("BlackGreen"))
+            id = R.drawable.blackgreen;
+        else if (color.equals("Red"))
+            id = R.drawable.red;
+        else if (color.equals("RedGreen"))
+            id = R.drawable.redgreen;
+        else if (color.equals("Green"))
+            id = R.drawable.green;
 
         view.setBackground(getResources().getDrawable(id));
     }
